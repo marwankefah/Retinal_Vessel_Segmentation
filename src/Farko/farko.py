@@ -99,7 +99,7 @@ def farko_method(data):
     # Create mask if not available
     # mask=image[:,:,1]>=20
     # mask=mask.astype(int)
-    print(data)
+    # print(data)
 
     maskImg = read_gif(data[1])
     maskImg = cv2.cvtColor(maskImg, cv2.COLOR_BGR2GRAY) / 255

@@ -24,7 +24,7 @@ def diazEtAl(image, mask):
     bottomHatImage = medianImage
     # cv2_imshow(bottomHatImage)
 
-    print(bottomHatImage.max(), bottomHatImage.min())
+    # print(bottomHatImage.max(), bottomHatImage.min())
 
     # lateral
     lateralKernel = [[-0.025, -0.025, -0.025, -0.025, -0.025],
@@ -53,7 +53,7 @@ def diazEtAl(image, mask):
     gbest[gbest < 0] = 0
     gbest[gbest > 255] = 255
     th = sorted(gbest)
-    print(th)
+    # print(th)
     Ienhanced[Ienhanced > th[2]] = 0
     Ienhanced[Ienhanced < th[0]] = 0
     Ienhanced[Ienhanced != 0] = 255
@@ -87,7 +87,8 @@ def diazEtAl_noMask(image):
     bottomHatImage = medianImage
     # cv2_imshow(bottomHatImage)
 
-    print(bottomHatImage.max(), bottomHatImage.min())
+    # print(bottomHatImage.max(), bottomHatImage.min())
+
 
     # lateral
     lateralKernel = [[-0.025, -0.025, -0.025, -0.025, -0.025],
@@ -116,7 +117,7 @@ def diazEtAl_noMask(image):
     gbest[gbest < 0] = 0
     gbest[gbest > 255] = 255
     th = sorted(gbest)
-    print(th)
+    # print(th)
     Ienhanced[Ienhanced > th[2]] = 0
     Ienhanced[Ienhanced < th[0]] = 0
     Ienhanced[Ienhanced != 0] = 255
