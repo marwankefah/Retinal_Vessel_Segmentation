@@ -69,7 +69,7 @@ def farko_method_2(image, maskImg):
     # finding thin vessels
     thinVessels = matched_filter(clacheImg, 4, 1, 7, 2.3)
 
-    cv2_imshow(thinVessels)
+    # cv2_imshow(thinVessels)
 
     closingKernel = np.ones((3, 3))
     closedThinVessels = morphology.binary_closing(thinVessels, closingKernel)
@@ -157,7 +157,7 @@ def farko_method(data):
     # finding thin vessels
     thinVessels = matched_filter(clacheImg, 4, 1, 7, 2.3)
 
-    cv2_imshow(thinVessels)
+    # cv2_imshow(thinVessels)
 
     closingKernel = np.ones((3, 3))
     closedThinVessels = morphology.binary_closing(thinVessels, closingKernel)
@@ -242,7 +242,7 @@ def farko_method_noMask(image):
     # finding thin vessels
     thinVessels = matched_filter(clacheImg, 4, 1, 7, 2.3)
 
-    cv2_imshow(thinVessels)
+    # cv2_imshow(thinVessels)
 
     closingKernel = np.ones((3, 3))
     closedThinVessels = morphology.binary_closing(thinVessels, closingKernel)

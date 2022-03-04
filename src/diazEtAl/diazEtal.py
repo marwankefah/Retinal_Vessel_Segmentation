@@ -21,7 +21,7 @@ def diazEtAl(image, mask):
     medianImage = cv2.medianBlur(img_filtered, 3)
 
     bottomHatImage = medianImage
-    cv2_imshow(bottomHatImage)
+    # cv2_imshow(bottomHatImage)
 
     print(bottomHatImage.max(), bottomHatImage.min())
 
@@ -39,7 +39,7 @@ def diazEtAl(image, mask):
     Ienhanced = (Ienhanced - Ienhanced.min()) / Ienhanced.max()
     Ienhanced *= 255
 
-    cv2_imshow(Ienhanced)
+    # cv2_imshow(Ienhanced)
 
     # MCET-HHO
     histogram, bin_edges = np.histogram(Ienhanced, bins=256, range=(0, 255))
@@ -60,7 +60,7 @@ def diazEtAl(image, mask):
     kernel = np.ones((5, 5), np.uint8)
     Ienhanced = morphology.closing(Ienhanced, kernel)
 
-    cv2_imshow(Ienhanced)
+    # cv2_imshow(Ienhanced)
     cleaned = morphology.remove_small_objects(Ienhanced.astype(bool), min_size=30, connectivity=8).astype(int)
 
     cleaned[cleaned == True] = 255
@@ -102,7 +102,7 @@ def diazEtAl_noMask(image):
     Ienhanced = (Ienhanced - Ienhanced.min()) / Ienhanced.max()
     Ienhanced *= 255
 
-    cv2_imshow(Ienhanced)
+    # cv2_imshow(Ienhanced)
 
     # MCET-HHO
     histogram, bin_edges = np.histogram(Ienhanced, bins=256, range=(0, 255))
@@ -123,7 +123,7 @@ def diazEtAl_noMask(image):
     kernel = np.ones((5, 5), np.uint8)
     Ienhanced = morphology.closing(Ienhanced, kernel)
 
-    cv2_imshow(Ienhanced)
+    # cv2_imshow(Ienhanced)
     cleaned = morphology.remove_small_objects(Ienhanced.astype(bool), min_size=30, connectivity=8).astype(int)
 
     cleaned[cleaned == True] = 255
