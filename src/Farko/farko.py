@@ -101,7 +101,7 @@ def farko_method(data):
     # mask=mask.astype(int)
     print(data)
 
-    maskImg = read_gif(mask[1])
+    maskImg = read_gif(data[1])
     maskImg = cv2.cvtColor(maskImg, cv2.COLOR_BGR2GRAY) / 255
 
     erosionKernel = morphology.disk(3)

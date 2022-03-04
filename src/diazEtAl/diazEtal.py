@@ -1,8 +1,9 @@
 import numpy as np
 import cv2
+from scipy.signal import convolve2d
 from skimage import morphology
-from BaseHHo import *
-from HomomorphicFilter import *
+from .BaseHHo import *
+from .HomomorphicFilter import *
 
 def diazEtAl(image, mask):
     kernel = np.ones((5, 5))
