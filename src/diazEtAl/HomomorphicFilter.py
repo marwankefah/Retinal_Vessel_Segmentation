@@ -1,5 +1,4 @@
 import numpy as np
-
 class HomomorphicFilter:
 
     def __init__(self, a=0.5, b=1.5):
